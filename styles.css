@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #636b2f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  font-family: "Agbalumo", system-ui;
+  z-index: 1000;
+  transition: opacity 0.5s ease;
+}
+
+.start-screen h2 {
+  font-size: 2.8rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.start-screen p {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.start-screen .start-btn {
+  padding: 14px 32px;
+  margin-top: 25px;
+  background: #bac095;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-screen .start-btn:hover {
+  background: #aab085;
+}
+
+body {
+  display: flex;
+  padding: 0 10px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #636b2f;
+}
+
+.container {
+  width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  background: #bac095;
+  border-radius: 10px;
+  gap: 50px;
+}
+
+.title {
+  font-family: "Agbalumo", system-ui;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.game-content {
+  display: flex;
+  gap: 70px;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.hangman-box img {
+  max-width: 270px;
+}
+
+.word-display {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-display .letter {
+  width: 28px;
+  border-bottom: 3px solid #333;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.word-display .letter.guessed {
+  border-color: transparent;
+  margin: -40px 0 35px;
+}
+
+.game-box h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.game-box .guesses-text b {
+  color: #ff0000;
+}
+
+.game-box .keyboard {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+:where(.game-modal, .keyboard) button {
+  color: #fff;
+  font-size: 1rem;
+  font-family: serif;
+  font-weight: 900;
+  background: #636b2f;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+}
+
+.keyboard button {
+  padding: 7px;
+  width: calc(100% / 9 - 5px);
+}
+
+.keyboard button[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+:where(.game-modal, .keyboard) button:hover {
+  background: #636b2f;
+}
+
+/* 🎮 Game Modal */
+.game-modal {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.4s ease;
+}
+
+.game-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.game-modal .content {
+  background: #bac095;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.game-modal img {
+  max-width: 130px;
+  margin-bottom: 20px;
+}
+
+.game-modal h4 {
+  font-size: 1.53rem;
+}
+
+.game-modal p {
+  font-size: 1.15rem;
+  margin: 15px 0 30px;
+  font-weight: 500;
+}
+
+.game-modal p b {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #636b2f;
+}
+
+.game-modal button {
+  padding: 12px 23px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.game-modal button:hover {
+  opacity: 0.8;
+}
+
+/* 📱 Responsive */
+@media (max-width: 782px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px;
+  }
+  .title {
+    display: none;
+  }
+  .game-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+  .hangman-box img {
+    max-width: 200px;
+  }
+  .word-display .letter {
+    width: 15px;
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 🌟 Start Screen -->
+    <div class="start-screen">
+      <h2>Let's Start Playing!</h2>
+      <p>Guess the word before it's too late...</p>
+      <p>can you survive the challenge?</p>
+      <button class="start-btn">Start Game</button>
+    </div>
+
+    <!-- 🎮 Game Screen -->
+    <div class="game-modal">
+      <div class="content">
+        <img src="Assets/lost.gif" />
+        <h4></h4>
+        <p><b></b></p>
+        <button class="play-again">Play Again</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1 class="title">Hangman Game</h1>
+      <div class="game-content">
+        <div class="hangman-box">
+          <img src="Assets/hangman-0.svg" />
+        </div>
+        <div class="game-box">
+          <ul class="word-display"></ul>
+          <h4 class="hint-text">Hint: <b></b></h4>
+          <h4 class="guesses-text">Wrong Guesses: <b>0 / 6</b></h4>
+          <div class="keyboard"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="wordList.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
